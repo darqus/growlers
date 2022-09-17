@@ -1,6 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-const { VueLoaderPlugin } = require('vue-loader')
 const path = require('path')
 
 module.exports = {
@@ -45,7 +44,6 @@ module.exports = {
   },
 
   plugins: [
-    new VueLoaderPlugin(),
     new ModuleFederationPlugin({
       name: 'vanGrowlers',
       filename: 'remoteEntry.js',
@@ -53,7 +51,6 @@ module.exports = {
         growlers: 'growlers@http://localhost:8080/remoteEntry.js',
       },
       exposes: {},
-      shared: require('./package.json').dependencies,
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
