@@ -1,6 +1,6 @@
 
 // @ts-ignore
-import { load } from 'growlers/store';
+import { load, subscribe, IStore } from 'growlers/store';
 import './index.scss';
 
 // @ts-ignore
@@ -11,6 +11,10 @@ import vsearch from 'growlers/vsearch'
 import vtaps from 'growlers/vtaps'
 
 load('hv-taplist');
+
+subscribe((store: IStore) => {
+  console.log(store)
+})
 
 vcart('#cart')
 vsearch('#search')
