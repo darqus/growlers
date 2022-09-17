@@ -13,7 +13,12 @@ import vtaps from 'growlers/vtaps'
 load('hv-taplist');
 
 subscribe((store: IStore) => {
-  console.log(store)
+  const tapList = store.filteredTaps
+  .slice(0, 3)
+  .map(({ beverageName }: { beverageName: string }) => beverageName)
+  .join(', ')
+  // @ts-ignore
+  document.getElementById('like').innerText = tapList
 })
 
 vcart('#cart')
