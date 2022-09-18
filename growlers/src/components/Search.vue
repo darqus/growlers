@@ -5,6 +5,7 @@
       v-model="searchText"
       class="focus:outline-none focus:ring focus:border-blue-300 px-4 py-3 leading-5 border rounded-md w-full"
     />
+    <div class="my-6"></div>
     <h1 class="mb-2 font-bold text-2xl">Alcohol</h1>
     <input
       type="range"

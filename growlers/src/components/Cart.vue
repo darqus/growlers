@@ -3,13 +3,13 @@
     <div class="text-right">
       <button
         type="button"
-        class="px-6 py-2 rounded-md font-semibold bg-green-500 text-white focus:outline-black"
+        class="px-6 py-2 mb-6 rounded-md font-semibold bg-green-500 text-white focus:outline-black"
         @click="checkout"
       >
         Checkout
       </button>
     </div>
-    <div v-for="tap in cart" :key="tap.beverageName" class="flex mb-3">
+    <div v-for="tap in cart" :key="tap.beverageName" class="flex mb-6">
       <img :src="tap.logo" class="flex-shrink w-24 h-24 rounded-3xl mx-auto" />
       <div class="flex-grow ml-3 text-xl">
         <p class="font-bold">{{ tap.producerName }}</p>
